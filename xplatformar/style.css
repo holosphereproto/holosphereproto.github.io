@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "Klavika";
+    src: url("./Klavika.otf");
+}
+
+@font-face {
+    font-family: "Klavika Black";
+    src: url("./KlavikaDisplay-Black.otf");
+}
+
+
+@font-face {
+    font-family: Chialab;
+    src: url('./diismono_chialab-medium.otf');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    font-family: 'Klavika';
+}
+
+body {
+    margin: 0;
+    padding: 0 1em;
+    display: flex;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.instructions {
+    font-size: 1.5em;
+    margin-top: 1em;
+}
+
+.title {
+    font-family: 'Klavika Black';
+    font-size: 1.85em;
+    text-transform: uppercase;
+    color: #E6007E;
+    margin-bottom: 0.5em;
+    line-height: 0.83;
+}
+
+.column-left, .column-right {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding-top: 1em;
+}
+
+.column-left {
+    justify-content: space-between;
+}
+
+.column-right {
+    align-items: center;
+}
+
+.column-right a {
+    user-select: none;
+    width: auto;
+    height: 20%;
+}
+
+.column-right img {
+    height: 100%;
+}
+
+.bcbf-logo {
+    width: 5em;
+    margin-bottom: 0.5em;
+}
+
+.bcbf-logo img {
+    width: 100%;
+}
+
+.chialab-logo {
+    font-family: "Chialab", Monospace;
+    font-size: 0.75em;
+    margin-bottom: 1em;
+}
+
+.fish {
+    color: #E08330;
+}
+
+.activate-ar {
+    background-color: transparent;
+    z-index: 99999;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+model-viewer {
+    --progress-bar-color: transparent;
+    width: 100%;
+    outline: none;
+}
+
+.fallback {
+    margin-top: 1em;
+    visibility: hidden;
+    font-size: 1.25em;
+}
+
+.fallback .first {
+    margin-top: 1em;
+}
+
+.fallback p {
+    margin: 0;
+    padding: 0;
+}

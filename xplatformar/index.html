@@ -1,0 +1,107 @@
+<!doctype HTML>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    <title>AR Model Viewer</title>
+    <meta charset="UTF-8">
+    <link href="./style.css" rel="stylesheet">
+    <script>
+        const macPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'];
+        const IS_IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        const IS_SAFARI = !!navigator.userAgent.match(/Version\/[\d.]+.*Safari/);
+        const IOS_VERSION = (() => {
+            if (!IS_IOS) {
+                return;
+            }
+            let match = navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/);
+            if (!match) {
+                return;
+            }
+            return [
+                parseInt(match[1], 10),
+                parseInt(match[2], 10),
+                parseInt(match[3] || 0, 10),
+            ].join('.');
+        })();
+
+        window.onload = () => {
+            const majorVersion = IOS_VERSION && IOS_VERSION.split('.')[0];
+            const modelViewers = [...document.querySelectorAll('model-viewer')];
+
+            if (IS_IOS && majorVersion && majorVersion < 13) {
+                modelViewers.forEach((e) => e.setAttribute('ar-modes', 'scene-viewer'));
+
+                document.querySelector('.fallback p').remove();
+                document.querySelector('.fallback p').innerText = 'Your device\n is not supported.'
+                document.querySelector('.fallback').style.visibility = 'visible';
+                return;
+            }
+
+            if (IS_IOS && !IS_SAFARI) {
+                [...document.querySelectorAll('.fallback a')].forEach((e) => e.remove());
+                document.querySelector('.fallback p').remove();
+                document.querySelector('.fallback p').innerText = 'This browser\n is not supported.\nPlease try with Safari.'
+                document.querySelector('.fallback').style.visibility = 'visible';
+                return;
+            }
+
+            if (majorVersion && majorVersion >= 13) {
+                return;
+            }
+
+            modelViewers.forEach((el) => {
+                el.addEventListener('click', (ev, target) => {
+                    const fallback = document.querySelector('.fallback');
+
+                    setTimeout(() => {
+                        fallback.style.visibility = 'visible';
+                    }, 8000);
+
+                    setInterval(() => {
+                        if (fallback.parentElement) {
+                            fallback.remove();
+                        }
+                    }, 17 * 1000);
+                })
+            })
+        };
+    </script>
+
+    <body style='overflow: hidden;'>
+        <div class="column-left">
+            <div>
+                <div class="title">
+                    <p>AR</p>
+                    <p>MODEL VIEWER</p>
+                   
+                </div>
+                <div class="instructions">
+                    <p>Tap image to launch</p>
+                </div>
+            </div>
+            <div class="fallback">
+                <p>Your device</p>
+                <p>is not supported.</p>
+            </div>
+       </div>
+       <div class="column-right">
+            <model-viewer
+                data-name="baloon"
+                src="https://seanjd.github.io/chandelier_static_01/scene.gltf"
+                ios-src="https://seanjd.github.io/Chandelier_static_01.usdz"
+                ar
+                ar-modes="scene-viewer quick-look"
+                camera-controls
+                auto-rotate
+                reveal="interaction"
+                exposure="0.7"
+                poster="./images/test-image.jpg"
+                style="height: 24%;"
+            >
+                <button slot="ar-button" class="activate-ar">
+                </button>
+            </model-viewer>
+       </div>
+    </body>
+</html>

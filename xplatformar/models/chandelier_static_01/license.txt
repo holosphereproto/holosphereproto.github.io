@@ -1,0 +1,11 @@
+Model Information:
+* title:	Chandelier_static_01
+* source:	https://sketchfab.com/3d-models/chandelier-static-01-0d27902df41a4dbaadd14d855a38fca4
+* author:	trafiq29 (https://sketchfab.com/trafiq29)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Chandelier_static_01" (https://sketchfab.com/3d-models/chandelier-static-01-0d27902df41a4dbaadd14d855a38fca4) by trafiq29 (https://sketchfab.com/trafiq29) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
