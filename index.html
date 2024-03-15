@@ -88,7 +88,7 @@
             </div>
        </div>
        <div class="column-right">
-            <model-viewer src="https://holosphereproto.github.io/exploreproteox/s/S_Model_Matched_01.glb" poster="https://modelviewer.dev/assets/ShopifyModels/Chair.webp" tone-mapping="commerce" shadow-intensity="1" ar camera-controls touch-action="pan-y" alt="A 3D model carousel">
+            <model-viewer src="https://holosphereproto.github.io/S_Model_Matched_01.glb" poster="https://modelviewer.dev/assets/ShopifyModels/Chair.webp" tone-mapping="commerce" shadow-intensity="1" ar camera-controls touch-action="pan-y" alt="A 3D model carousel">
   
   <button slot="ar-button" id="ar-button">
     View in your space
@@ -122,7 +122,7 @@
 
   window.switchSrc = (element, name) => {
     const base = "https://modelviewer.dev/assets/ShopifyModels/" + name;
-    modelViewer.src = "https://holosphereproto.github.io/exploreproteox/s/S_Model_Matched_01.glb";
+    modelViewer.src = "https://holosphereproto.github.io/S_Model_Matched_01.glb";
     modelViewer.poster = base + '.webp';
     const slides = document.querySelectorAll(".slide");
     slides.forEach((element) => {element.classList.remove("selected");});
