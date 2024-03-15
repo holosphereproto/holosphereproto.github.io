@@ -104,16 +104,13 @@
 
   <div class="slider">
     <div class="slides">
-      <button class="slide selected" onclick="switchSrc(this, 'Chair')" style="background-image: url('https://modelviewer.dev/assets/ShopifyModels/Chair.webp');">
+      <button class="slide selected" onclick="switchSrc(this, 'S_Model_Matched_01')" style="background-image: url('https://modelviewer.dev/assets/ShopifyModels/Chair.webp');">
 
-      </button><button class="slide" onclick="switchSrc(this, 'Mixer')" style="background-image: url('https://modelviewer.dev/assets/ShopifyModels/Mixer.webp');">
+      </button><button class="slide" onclick="switchSrc(this, 'QX_Model_Matched_01')" style="background-image: url('https://modelviewer.dev/assets/ShopifyModels/Mixer.webp');">
 
-      </button><button class="slide" onclick="switchSrc(this, 'GeoPlanter')" style="background-image: url('https://modelviewer.dev/assets/ShopifyModels/GeoPlanter.webp');">
+      </button><button class="slide" onclick="switchSrc(this, 'MX_Model_Matched_01')" style="background-image: url('https://modelviewer.dev/assets/ShopifyModels/GeoPlanter.webp');">
       
-      </button><button class="slide" onclick="switchSrc(this, 'ToyTrain')" style="background-image: url('https://modelviewer.dev/assets/ShopifyModels/ToyTrain.webp');">
-      
-      </button><button class="slide" onclick="switchSrc(this, 'Canoe')" style="background-image: url('https://modelviewer.dev/assets/ShopifyModels/Canoe.webp');">    
-    </button></div>
+      </button></div>
   </div>
 </model-viewer>
 
@@ -121,8 +118,8 @@
   const modelViewer = document.querySelector("model-viewer");
 
   window.switchSrc = (element, name) => {
-    const base = "https://modelviewer.dev/assets/ShopifyModels/" + name;
-    modelViewer.src = "https://holosphereproto.github.io/S_Model_Matched_01.glb";
+    const base = "https://holosphereproto.github.io/" + name;
+    modelViewer.src = base + '.glb';
     modelViewer.poster = base + '.webp';
     const slides = document.querySelectorAll(".slide");
     slides.forEach((element) => {element.classList.remove("selected");});
