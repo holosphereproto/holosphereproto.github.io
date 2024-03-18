@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
     <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
-    <title>AR Model Viewer</title>
+    <title>Explore Proteox</title>
     <meta charset="UTF-8">
    
     <link href="./style.css" rel="stylesheet">
@@ -71,7 +71,7 @@
 
     <body style='overflow: hidden;'>
        <div class="column-right">
-            <model-viewer src="https://holosphereproto.github.io/S_Model_Matched_01.glb" poster="https://holosphereproto.github.io/ExploreProteox/S_icon_L_01.png" tone-mapping="commerce" shadow-intensity="1" ar camera-controls touch-action="pan-y" alt="A 3D model carousel">
+            <model-viewer src="https://holosphereproto.github.io/Proteox_S.glb" poster="https://holosphereproto.github.io/Proteox_S.png" tone-mapping="commerce" shadow-intensity="1" ar camera-controls touch-action="pan-y" alt="Proteox S">
   
   <button slot="ar-button" id="ar-button">
     View in your space
@@ -87,11 +87,11 @@
 
   <div class="slider">
     <div class="slides">
-      <button class="slide selected" onclick="switchSrc(this, 'S_Model_Matched_01')" style="background-image: url('https://holosphereproto.github.io/ExploreProteox/S_icon_L_01.png');">
+      <button class="slide selected" onclick="switchSrc(this, 'Proteox_S')" style="background-image: url('https://holosphereproto.github.io/Proteox_S.png');">
 
-      </button><button class="slide" onclick="switchSrc(this, 'QX_Model_Matched_01')" style="background-image: url('https://holosphereproto.github.io/ExploreProteox/QX_icon_L_01.png');">
+      </button><button class="slide" onclick="switchSrc(this, 'Proteox_QX')" style="background-image: url('https://holosphereproto.github.io/Proteox_QX.png');">
 
-      </button><button class="slide" onclick="switchSrc(this, 'MX_Model_Matched_01')" style="background-image: url('https://holosphereproto.github.io/ExploreProteox/MX_icon_L_01.png');">
+      </button><button class="slide" onclick="switchSrc(this, 'Proteox_MX')" style="background-image: url('https://holosphereproto.github.io/Proteox_MX.png');">
       
       </button></div>
   </div>
@@ -103,7 +103,7 @@
   window.switchSrc = (element, name) => {
     const base = "https://holosphereproto.github.io/" + name;
     modelViewer.src = base + '.glb';
-    modelViewer.poster = base + '.webp';
+    modelViewer.poster = base + '.png';
     const slides = document.querySelectorAll(".slide");
     slides.forEach((element) => {element.classList.remove("selected");});
     element.classList.add("selected");
